@@ -16,7 +16,7 @@ FASTLED_NAMESPACE_BEGIN
 // warning: set and fastset are not thread-safe! use with caution!
 template<uint8_t PIN, uint32_t _MASK, typename GPIO_PORT> class _W80XPIN {
 public:
-  typedef GPIO_TypeDef* port_ptr_t;
+  typedef volatile GPIO_TypeDef* port_ptr_t;
   typedef uint32_t port_t;
   
   
@@ -52,9 +52,13 @@ public:
 
 #define MAX_PIN 29
 
+_FL_IO(A);
 _FL_IO(B);
-_FL_DEFPIN(PB11, B); _FL_DEFPIN(PB12, B);
 
+_FL_DEFPIN(PB11, B); 
+_FL_DEFPIN(PB14, B);
+_FL_DEFPIN(PA0, A);
+_FL_DEFPIN(PA10, A);
 #ifdef W80X_DEFAULT_SPI_TX_PIN
 #define SPI_DATA W80X_DEFAULT_SPI_TX_PIN
 #else
