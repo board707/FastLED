@@ -26,9 +26,7 @@ typedef volatile uint32_t RwReg;
 // is the boot-time value in another var already for any platforms?
 // it doesn't seem to be, so hardcode the sdk default of 125 MHz
 #ifndef F_CPU
-
-#define F_CPU 125000000
-
+#define F_CPU 240000000
 #endif
 
 #ifndef VARIANT_MCK
@@ -65,21 +63,19 @@ typedef volatile uint32_t RwReg;
 #endif
 
 // SPI pin defs for old SDK ver
-#ifndef PICO_DEFAULT_SPI
-#define PICO_DEFAULT_SPI 0
+#ifndef W80X_DEFAULT_SPI
+#define W80X_DEFAULT_SPI 0
 #endif
-#ifndef PICO_DEFAULT_SPI_SCK_PIN
-#define PICO_DEFAULT_SPI_SCK_PIN 18
+#ifndef W80X_DEFAULT_SPI_SCK_PIN
+#define W80X_DEFAULT_SPI_SCK_PIN PIN_SPI_SCK
 #endif
-#ifndef PICO_DEFAULT_SPI_TX_PIN
-#define PICO_DEFAULT_SPI_TX_PIN 19
+#ifndef W80X_DEFAULT_SPI_TX_PIN
+#define W80X_DEFAULT_SPI_TX_PIN PIN_SPI_MOSI
 #endif
-#ifndef PICO_DEFAULT_SPI_RX_PIN
-#define PICO_DEFAULT_SPI_RX_PIN 16
+#ifndef W80X_DEFAULT_SPI_RX_PIN
+#define W80x_DEFAULT_SPI_RX_PIN PIN_SPI_MISO
 #endif
-#ifndef PICO_DEFAULT_SPI_CSN_PIN
-#define PICO_DEFAULT_SPI_CSN_PIN 17
-#endif
+
 
 //static uint32_t saved_interrupt_status;
 //#define cli() (saved_interrupt_status = save_and_disable_interrupts())
